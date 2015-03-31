@@ -1,0 +1,74 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+    <title ng-bind-template="Google phone {{ "{{query}}" }}"></title>
+{% endblock %}
+{% block body %}
+    {% raw %}
+        <div ng-controller="PhoneListCtrl">
+            <div class="container">
+                <div class="col-xs-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Search : <input ng-model="query" class="form-control">
+
+                            Sort by :
+                            <select ng-model="orderProp" class="form-control">
+                                <option value="name">Alphabet</option>
+                                <option value="age">Recent</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <form id="todo-form" ng-submit="addTodo()">
+                                <input type="text" class="form-control" id="new-todo" placeholder="Ajouter une tache" ng-model="newTodo" autofocus>
+                            </form>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-unstyled">
+                                <li ng-class="{editing: task == editedTask}" ng-repeat="task in tasks | filter:query | orderBy:orderProp">
+                                    <div class="view">
+                                        <div class="row">
+                                            <div class="col-xs-1">
+                                                <input type="checkbox" ng-model="task.enabled">
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <label ng-dblclick="editTodo(task)">{{task.text}}</label>
+                                            </div>
+                                            <div class="col-xs-1">
+                                                <button type="button" ng-click="removeTodo(task)" class="btn btn-danger">X</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="edit">
+                                        <form ng-submit="doneEditing(task)">
+                                            <input type="hidden" name="id" ng-value="task.id"/>
+                                            <input class="edit" ng-trim="false" ng-model="task.text" ng-blur="doneEditing(task)" todo-escape="revertEditing(task)" todo-focus="task == editedTodo" class="form-control">
+                                        </form>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <p>Total number of tasks: {{tasks.length}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        <div>
+
+
+        </div>
+        </div>
+    {% endraw %}
+{% endblock %}

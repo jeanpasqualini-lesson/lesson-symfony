@@ -1,0 +1,5 @@
+services:
+    lesson_backend_bundle.json_request_listener:
+        class: Lesson\Bundle\BackendBundle\EventListener\JsonRequestListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 100 }

@@ -1,0 +1,23 @@
+framework:
+    secret: test
+    serializer: true
+    router: { resource : "%kernel.root_dir%/config/routing/routing_dev.yml" }
+    templating:
+         engines:
+             - twig
+    form: ~
+
+fos_rest: ~
+
+doctrine:
+     dbal:
+         driver: "pdo_mysql"
+         host: "localhost"
+         port: "3306"
+         dbname: "lesson"
+         user: "root"
+         password: "147258"
+         charset: UTF8
+     orm:
+         auto_generate_proxy_classes: "%kernel.debug%"
+         auto_mapping: true

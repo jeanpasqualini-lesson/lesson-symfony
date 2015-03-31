@@ -1,0 +1,27 @@
+{
+  "name": "vendor_name/package_name",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload" :
+  {
+    "psr-4" :
+    {
+      "" : "src/"
+    }
+  },
+  "require": {
+    "symfony/symfony": "2.6.x-dev",
+    "friendsofsymfony/rest-bundle": "~1.5",
+    "jms/serializer-bundle": "0.13.*",
+    "doctrine/orm": "~2.2,>=2.2.3,<2.5",
+    "doctrine/dbal": "<2.5",
+    "doctrine/doctrine-bundle": "~1.4"
+  }
+}

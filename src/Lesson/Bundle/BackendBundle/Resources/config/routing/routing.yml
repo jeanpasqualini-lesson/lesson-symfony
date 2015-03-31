@@ -1,0 +1,3 @@
+tasks:
+    type: rest
+    resource: Lesson\Bundle\BackendBundle\Controller\TasksController

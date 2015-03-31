@@ -1,0 +1,19 @@
+<html ng-app="app" lang="fr">
+    <head>
+        {% block title %}{% endblock %}
+        {% block header %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('built/app/css/app.css') }}" type="text/css"/>
+    </head>
+    <body>
+        <div class="header">
+            <div class="navbar">
+
+            </div>
+        </div>
+        {% block body %}{% endblock %}
+        <div>
+            <script type="text/javascript" src="{{ asset("built/app/js/app.js") }}"></script>
+        </div>
+    </body>
+
+</html>

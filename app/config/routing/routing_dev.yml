@@ -1,0 +1,10 @@
+home:
+    path: "/"
+    defaults: { _controller: LessonMainBundle:Main:home }
+
+lesson_backend_bundle:
+    resource: "@LessonBackendBundle/Resources/config/routing/routing.yml"
+    prefix: /api/v1
+
+lesson_frontend_bundle:
+    resource: "@LessonFrontendBundle/Resources/config/routing/routing.yml"
